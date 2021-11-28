@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{1C0CCB31-8674-96E6-36E4-1AD2182A41DB}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/Enemy.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Viev/GameOverText.cs" Line="20" Column="74" />
+      <File FileName="Assets/Scripts/Player/Player.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerMover.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerInput.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Maze/Maze.cs" Line="21" Column="22" />
+      <File FileName="Assets/Scripts/Maze/RenderMaze.cs" Line="101" Column="24" />
+      <File FileName="Assets/Scripts/FollowCamera.cs" Line="7" Column="33" />
+      <File FileName="Assets/Scripts/Finish.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="20" Column="39" />
+      <File FileName="Assets/Scripts/Enemy/Enemy.cs" Line="13" Column="50" />
+      <File FileName="Assets/Scripts/Enemy/EnemyMover.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/Viev/HealthViev.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SoundPlayer.cs" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/MainMenu/MainMenuController.cs" Line="9" Column="49" />
+      <File FileName="Assets/Scripts/MainMenu/MainMenuViev.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/SceneLoader.cs" Line="10" Column="38" />
+      <File FileName="Assets/Scripts/Helper.cs" Line="9" Column="1" />
+      <File FileName="Assets/Scripts/Viev/ExitButton.cs" Line="10" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dfcdf2f4-0aa3-4745-aea8-554c1193998c" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
