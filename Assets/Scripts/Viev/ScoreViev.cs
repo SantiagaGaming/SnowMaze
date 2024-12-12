@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class ScoreViev : MonoBehaviour
 {
     [SerializeField] private Text _scoreText;
-    public void SetScoreText(int value)
-    {
-        _scoreText.text = value.ToString();
-    }
+
+    public void SetScoreText(int value)=> _scoreText.text = value.ToString();
 }

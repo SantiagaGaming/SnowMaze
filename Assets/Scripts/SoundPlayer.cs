@@ -12,22 +12,15 @@ public class SoundPlayer : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-        }
+        
     }
     private SoundPlayer(){}
 
-    public void PlayDamageSound()
-    {
-        _audioSource.PlayOneShot(_dmg);
-    }
-    public void PlayWinSound()
-    {
-        _audioSource.PlayOneShot(_win);
-    }
-    public void PlayLoseSound()
-    {
-        _audioSource.PlayOneShot(_lose);
-    }
+    public void PlayDamageSound() => _audioSource.PlayOneShot(_dmg);
+
+    public void PlayWinSound() => _audioSource.PlayOneShot(_win);
+
+    public void PlayLoseSound() => _audioSource.PlayOneShot(_lose);
+
 }

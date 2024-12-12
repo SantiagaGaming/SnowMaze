@@ -12,13 +12,11 @@ public class GameOverText : MonoBehaviour
   public void OnShowEndText(bool value)
     {
         if(value)
-        {
             _gameOverText.GetComponent<Text>().text = Helper.GAME_OVER;
-        }
+        
         else if(!value)
-        {
             _gameOverText.GetComponent<Text>().text = Helper.LEVEL_PASSED;
-        }
+        
         _gameOverText.SetActive(true);
 
     }
@@ -30,5 +28,4 @@ public class GameOverText : MonoBehaviour
     {
         _player.RestartEvent -= OnShowEndText;
     }
-
 }

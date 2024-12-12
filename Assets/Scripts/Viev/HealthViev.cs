@@ -17,8 +17,5 @@ public class HealthViev : MonoBehaviour
     {
         _player.RecountHPEvent -= OnRenderHealth;
     }
-    private void OnRenderHealth(int value)
-    {
-        _hp[value].sprite = _dmgSprite;
-    }
+    private void OnRenderHealth(int value)=> _hp[value].sprite = _dmgSprite;
 }

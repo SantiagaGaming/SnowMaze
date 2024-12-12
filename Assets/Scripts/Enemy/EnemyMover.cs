@@ -17,23 +17,16 @@ public class EnemyMover : MonoBehaviour
     }
     private void Update()
     {
-        _rb.velocity = _currentVector * _speed;
+        _rb.linearVelocity = _currentVector * _speed;
     }
     private void SetVector()
     {
         int rnd = Random.Range(0, 2);
         if(rnd ==0)
-        {
             _currentVector = Vector2.left;
-        }
         else 
-        {
             _currentVector = Vector2.down;
-        }
     }
-    private void SetSpeed()
-    {
-        _speed = Random.Range(0.2f, 1);
-    }
+    private void SetSpeed() => _speed = Random.Range(0.2f, 1);
 
 }

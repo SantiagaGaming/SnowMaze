@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RenderMaze : MonoBehaviour
 {
-
     [SerializeField] private Player _player;
     [SerializeField] private GameObject[] _treesPrefubs;
     [SerializeField] private GameObject _finish;
@@ -19,8 +18,6 @@ public class RenderMaze : MonoBehaviour
     {
         SetMazeSize();
         _maze = new Maze(_xSize, _ySize);
-        _maze.GenerateWalls();
-        _maze.GeneratePath();
         _maze.GenerateMaze();
 
         StartRenderMaze();
@@ -31,42 +28,31 @@ public class RenderMaze : MonoBehaviour
         {
             for (int j = 0; j <_ySize; j++)
             {
-                if (_maze.GetMaze()[i,j] ==1)
-                {
+                if (_maze.GetMaze[i,j] == Helper.WALL)
                     BuildObject(_treesPrefubs[Random.Range(0,_treesPrefubs.Length)], new Vector2(transform.position.x + i, transform.position.y - j));
-                }
-                else if(_maze.GetMaze()[i, j] == 3)
-                {
+                
+                else if(_maze.GetMaze[i, j] == Helper.START)
                     SetPlayerPosition(new Vector2(transform.position.x + i, transform.position.y - j));
-                }
-                else if (_maze.GetMaze()[i, j] == 4)
-                {
+                
+                else if (_maze.GetMaze[i, j] == Helper.FINISH)
                     BuildObject(_finish, new Vector2(transform.position.x + i, transform.position.y - j));
-                }
-                else
+                
+                else if (_maze.GetMaze[i, j] == Helper.EMPTY)
                 {
-
                     int rnd = Random.Range(0, GetDifficulty());
                     if(rnd ==1)
-                    {
                         BuildObject(_enemy[Random.Range(0, _enemy.Length)], new Vector2(transform.position.x + i, transform.position.y - j));
-                    }
                 }
             }
 
-            }
         }
-    private void BuildObject(GameObject obj, Vector2 position)
-    {
-        Instantiate(obj, position, Quaternion.identity);
     }
-    private void SetPlayerPosition(Vector2 pos)
-    {
-        _player.transform.position = pos;
-    }
+    private void BuildObject(GameObject obj, Vector2 position) => Instantiate(obj, position, Quaternion.identity);
+
+    private void SetPlayerPosition(Vector2 pos)=> _player.transform.position = pos;
+
     private void SetMazeSize()
     {
-  
         if (PlayerPrefs.GetInt(Helper.DIFFICULTY) == 0)
         {
             _xSize = Random.Range(10, 20);
@@ -82,24 +68,19 @@ public class RenderMaze : MonoBehaviour
             _xSize = Random.Range(50, 120);
             _ySize = Random.Range(50, 120);
         }
-
     }
     private int GetDifficulty()
     {
         if (PlayerPrefs.GetInt(Helper.DIFFICULTY) == 0)
-        {
             return 30;
-        }
-        else if (PlayerPrefs.GetInt(Helper.DIFFICULTY) == 1)
-        {
-            return 20;
-        }
-        else if (PlayerPrefs.GetInt(Helper.DIFFICULTY) == 2)
-        {
-            return 10;
-        }
-        else return 20;
 
+        else if (PlayerPrefs.GetInt(Helper.DIFFICULTY) == 1)
+            return 20;
+        
+        else if (PlayerPrefs.GetInt(Helper.DIFFICULTY) == 2)
+            return 10;
+        
+             return 20;
     }
 }
 

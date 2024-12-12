@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         LoadScore();
-    
     }
     private void OnEnable()
     {
@@ -59,5 +58,4 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt(Helper.PLAYER_SCORE, _score);
         }
     }
-
 }

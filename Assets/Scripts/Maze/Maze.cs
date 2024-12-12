@@ -1,109 +1,74 @@
 using System;
 
-    public class Maze
+public class Maze
+{
+    private int[,] _maze;
+    private int _x;
+    private int _y;
+    private int _tempX = 1;
+    private int _tempY = 1;
+
+    public Maze(int x, int y)
     {
-        private int[,] _maze;
-
-        private int _x;
-        private int _y;
-        private int _tempX = 1;
-        private int _tempY = 1;
-        public Maze(int x, int y)
-        {
-            _x = x;
-            _y = y;
-            _maze = new int[x, y];
-
-
+        _x = x;
+        _y = y;
+        _maze = new int[x, y];
     }
-public int[,] GetMaze()
+
+    public int[,] GetMaze => _maze;
+    public void GenerateMaze()
     {
-        return _maze;
+        GenerateWalls();
+        GeneratePath();
+        GenerateMoreWalls();
     }
-       
-        public void GenerateWalls()
+
+    private void GenerateWalls()
+    {
+        for (int i = 0; i < _x; i++)
         {
-            for (int i = 0; i < _x; i++)
+            for (int j = 0; j < _y; j++)
             {
-                for (int j = 0; j < _y; j++)
-                {
-                    if (i == 0 || j == 0 || i == _x - 1 || j == _y - 1)
-                    {
-                        _maze[i, j] = 1;
-                    }
-                }
-
+                if (i == 0 || j == 0 || i == _x - 1 || j == _y - 1)
+                    _maze[i, j] = Helper.WALL;
             }
-
         }
-        public void GeneratePath()
+    }
+    private void GeneratePath()
+    {
+        _maze[1, 1] = Helper.START;
+
+        while (true)
         {
-            _maze[1, 1] = 3;
-            while (true)
-            {
             int choice = UnityEngine.Random.Range(0, 2);
             if (choice == 0)
-                {
-                    _tempX++;
-                }
-                else if(choice == 1)
-                {
-                    _tempY++;
-                }
-                if (_tempX >= _x || _tempY >= _y)
+                _tempX++;
+            else
+                _tempY++; 
+
+            if (_tempX >= _x-1 || _tempY >= _y-1)
             {
-                _maze[_tempX - 2, _tempY - 2] = 4;
+                _maze[_tempX , _tempY] = Helper.FINISH;
                 return;
             }
-             
 
-                if (_maze[_tempX, _tempY] ==1)
+            if (_maze[_tempX, _tempY] != Helper.WALL)
+                _maze[_tempX, _tempY] = Helper.FLOOR;
+        }
+    }
+
+    private void GenerateMoreWalls()
+    {
+        for (int i = 1; i < _x - 1; i++)
+        {
+            for (int j = 1; j < _y - 1; j++)
             {
-                _maze[_tempX, _tempY] = 1;
-            }
-                else
-            { _maze[_tempX, _tempY] = 2; }
-              
-            
+                if (_maze[i, j] == Helper.EMPTY) 
+                {
+                    int choice = UnityEngine.Random.Range(0, 2);
+                    _maze[i, j] = choice == 0 ? Helper.WALL : _maze[i, j];
+                }
             }
         }
-        public void GenerateMaze()
-        {
-            for (int i = 0; i < _x; i++)
-            {
-                for (int j = 0; j < _y; j++)
-                {
-                    if (_maze[i, j] == 1)
-                    {
-                        _maze[i, j] = 1;
-                    }
-                    else if(_maze[i, j] == 2)
-                {
-                    _maze[i, j] = 2;
-                }
-                    else if(_maze[i, j] == 3)
-                {
-                    _maze[i, j] = 3;
-                }
-                else if (_maze[i, j] == 4)
-                {
-                    _maze[i, j] = 4;
-                }
-                else
-                    {
-                    int choice = UnityEngine.Random.Range(0, 2);
-                        if (choice == 0)
-                        {
-                            _maze[i, j] = 1;
-                        }
-                    }
-                }
-
-            }
- 
     }
-
-    }
-
-
-
+}

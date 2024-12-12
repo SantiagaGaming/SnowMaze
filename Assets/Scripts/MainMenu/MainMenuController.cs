@@ -13,9 +13,5 @@ public void SetDifficultyAndStartGame(int value)
         StartGame();
 
     }
-    private void StartGame()
-    {
-        _sceneLoader.LoadScene(Helper.GAME_SCENE);
-    }
-
+    private void StartGame()=> _sceneLoader.LoadScene(Helper.GAME_SCENE);
 }

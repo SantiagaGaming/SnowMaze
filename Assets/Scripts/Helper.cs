@@ -16,4 +16,10 @@ public class Helper : MonoBehaviour
     public const string LEVEL_PASSED = "Level Passed";
 
     public const string TREE_OBJECT = "Tree";
+
+    public const int EMPTY = 0;
+    public const int FLOOR = 1;
+    public const int WALL = 2;
+    public const int START = 3;
+    public const int FINISH= 4;
 }

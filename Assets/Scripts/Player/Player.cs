@@ -5,19 +5,16 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-  
     public UnityAction<int> RecountHPEvent;
     public UnityAction <bool>RestartEvent;
 
     private Animator _anim;
-
 
     private int _hp = 3;
 
     private void Start()
     {
         _anim = GetComponent<Animator>();
-
     }
     public void PlayAnimation(bool anim)
     {
@@ -37,7 +34,6 @@ public class Player : MonoBehaviour
             finish.CloseFinish();
       
             RestartGame(true);
-            
         }
     }
 
@@ -48,9 +44,7 @@ public class Player : MonoBehaviour
         RecountHPEvent.Invoke(_hp);
         SoundPlayer.Instance.PlayDamageSound();
         if(_hp<1)
-        {
             RestartGame(false);
-        }
     }
     private IEnumerator GetDmg()
     {
@@ -72,6 +66,4 @@ public class Player : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
-
-
 }

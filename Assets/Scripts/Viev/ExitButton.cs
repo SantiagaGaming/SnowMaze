@@ -14,8 +14,5 @@ public class ExitButton : MonoBehaviour
     {
         _exitButton.onClick.AddListener(ExitButtonTap);
     }
-    private void ExitButtonTap()
-    {
-        ExitMenuTapEvent.Invoke();
-    }
+    private void ExitButtonTap()=> ExitMenuTapEvent.Invoke();
 }
