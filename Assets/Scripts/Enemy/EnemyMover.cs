@@ -17,7 +17,7 @@ public class EnemyMover : MonoBehaviour
     }
     private void Update()
     {
-        _rb.linearVelocity = _currentVector * _speed;
+        _rb.velocity = _currentVector * _speed;
     }
     private void SetVector()
     {

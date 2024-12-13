@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthViev : MonoBehaviour
+public class HealthView : MonoBehaviour
 {
     [SerializeField] private Image[] _hp;
     [SerializeField] private Sprite _dmgSprite;

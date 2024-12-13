@@ -21,13 +21,13 @@ public class PlayerMover : MonoBehaviour
     }
     public void TryMove(float directionX, float directionY)
     {
-        _rb.linearVelocity = new Vector2(directionX * _moveSpeed, directionY * _moveSpeed);
+        _rb.velocity = new Vector2(directionX * _moveSpeed, directionY * _moveSpeed);
         ShowAnimation();
 
     }
     private void ShowAnimation()
     {
-        if (_rb.linearVelocity.magnitude > 0.1f)
+        if (_rb.velocity.magnitude > 0.1f)
         {
             _player.PlayAnimation(true);
         }

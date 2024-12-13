@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private ExitButton _exitButton;
-    [SerializeField] private ScoreViev _scoreViev;
+    [SerializeField] private ScoreView _scoreView;
 
     private int _score;
 
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     private void LoadScore()
     {
         _score = PlayerPrefs.GetInt(Helper.PLAYER_SCORE);
-        _scoreViev.SetScoreText(_score);
+        _scoreView.SetScoreText(_score);
     }
     private void SetScore(bool gameOver)
     {
