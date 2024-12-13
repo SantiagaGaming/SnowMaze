@@ -598,7 +598,7 @@ MonoBehaviour:
   _player: {fileID: 1476802004}
   _sceneLoader: {fileID: 151428457}
   _exitButton: {fileID: 818745807}
-  _scoreViev: {fileID: 818745808}
+  _scoreView: {fileID: 818745808}
 --- !u!4 &429032487
 Transform:
   m_ObjectHideFlags: 0
@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 818745807}
   - component: {fileID: 818745808}
   m_Layer: 0
-  m_Name: Viev
+  m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -880,7 +880,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 818745803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218de8a915ba7d049829cd3425412947, type: 3}
+  m_Script: {fileID: 11500000, guid: 63db98e1c49360642820a893a4d6f4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1183615044}

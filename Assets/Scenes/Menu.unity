@@ -2070,7 +2070,7 @@ GameObject:
   - component: {fileID: 2050123903}
   - component: {fileID: 2050123902}
   m_Layer: 0
-  m_Name: MainMenuViev
+  m_Name: MainMenuView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
